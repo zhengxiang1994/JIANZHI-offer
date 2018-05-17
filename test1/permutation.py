@@ -2,11 +2,12 @@
 class Solution:
     def __init__(self):
         self.sum = 0
+        self.res = []
 
     def permu(self, arr, len, index):
         if index == len:
             self.sum += 1
-            print(arr)
+            self.res.append(arr.copy())
         else:
             for i in range(index, len):
                 self.swap(arr, index, i)
@@ -21,4 +22,6 @@ if __name__ == "__main__":
     arr1 = [1, 2, 3]
     s = Solution()
     s.permu(arr1, 3, 0)
+    print(s.res)
+    print(s.sum)
 
